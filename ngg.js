@@ -3,7 +3,7 @@ let x = Math.floor((Math.random() * 100) + 1);
 const inputValue = document.getElementById("num").value;
 
 function checkInput() {
-	let numberOfSub = 1;
+	let numberOfSub = 0;
 	const parr = document.getElementById("demo");
 	if(inputValue == x && numberOfSub <= 3) {
 		parr.innerHTML = "Congratulations, you got it right!"
