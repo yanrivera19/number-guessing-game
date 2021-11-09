@@ -1,8 +1,8 @@
 let x = Math.floor((Math.random() * 100) + 1);
 	console.log(x);
-const inputValue = document.getElementById("num").value;
 
 function checkInput() {
+	const inputValue = document.getElementById("num").value;
 	let numberOfSub = 0;
 	const parr = document.getElementById("demo");
 	if(inputValue == x && numberOfSub <= 3) {
@@ -11,7 +11,7 @@ function checkInput() {
 		parr.innerHTML = "Too Low"
 	} else if(inputValue > x && numberOfSub < 3) {
 		parr.innerHTML = "Too high"
-	} else if(inputValue != x && numberOfSub == 3) {
+	} else {
 		parr.innerHTML = `Sorry, the correct number was ${x}. Try again.`
 	}
 	numberOfSub++
