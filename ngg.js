@@ -4,7 +4,7 @@ Number-guseeing-Game
 Step 1: Define a variable called x with a random number producer, using
 the Math.random method to generate the random number from 1-100, and apply
 to it the Math.floor method to make the random numbers integers and not decimals.
-Step 2: Define a variable called numberOfSub with an initial value of 0. We will use
+Step 2: Define a variable called numberOfSub with an initial value of 1. We will use
 this variable to track the amount of submits that have been made in the browser.
 Step 3: Define a variable called maxSubmits with the maximum number of submits 
 allowed, which is 3.
@@ -45,7 +45,7 @@ displayed only once, and not everytime you either press the enter-key or click t
 
 let x = Math.floor((Math.random() * 100) + 1);
 	console.log(x);
-let numberOfSub = 0;
+let numberOfSub = 1;
 const maxSubmits = 3;
 
 function checkInput(event) {
@@ -56,18 +56,17 @@ function checkInput(event) {
 		resetButton();
 	} else if(inputValue < x && numberOfSub < maxSubmits) {
 		parr.innerHTML = "Too Low"
-		numberOfSub++;
 	} else if(inputValue > x && numberOfSub < maxSubmits) {
-		parr.innerHTML = "Too high"
-		numberOfSub++;		
+		parr.innerHTML = "Too high"		
 	} else {
 		parr.innerHTML = `Sorry, the correct number was ${x}. Try again.`
 		resetButton();	
 	}
-
-	numberOfSub++;
+	
+	numberOfSub++
 	event.preventDefault();		
 };
+
 
 let resetGame = function () {
 document.location.href = "";
