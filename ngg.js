@@ -74,7 +74,7 @@ document.location.href = "";
 };
 
 function resetButton() {
-	var y = document.createElement("BUTTON");
+	const y = document.createElement("BUTTON");
 	y.className = "btn btn-success";
   	y.innerHTML	= "Play Again";
   	document.querySelector(".container-fluid").appendChild(y);
