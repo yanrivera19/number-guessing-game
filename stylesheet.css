@@ -30,7 +30,7 @@ h4 {
   color: darkolivegreen;
 }
 
-#num {
+/*#num {
 font-family: sans-serif;
 padding: .375rem .75rem;    
 font-size: 1.2rem;
@@ -43,7 +43,7 @@ border: 1px solid #ced4da;
 appearance: none;
 border-radius: .25rem;
 transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
+}*/
 
 @media only screen and (min-width: 768px) {
 
