@@ -80,10 +80,8 @@ function checkInput(event) {
 
 let resetGame = function () {
 	randomNum = Math.floor((Math.random() * 100) + 1);
-	console.log(randomNum);
 	numberOfSub = 1;
 	inputValue = parseInt(document.getElementById("num").value = "");
-	console.log(typeof inputValue);
 	document.getElementById("buttonSub").disabled = false;
 	resetBtn.style.display= "none";
 	messageDisp.innerHTML = "";
