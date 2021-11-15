@@ -42,8 +42,8 @@ Step 14: We will use the preventDefault method on the event parameter to prevent
 This will be used so that the random number doesn't change with every submission and the messages 
 displayed on the page can be visible after every submission. 
 Step 15: Create a function called resetGame that will reset the game by generating a new random number,
-reseting the numberOfSub variable to its initial value of 1, clearing out the displayed messages using an empty
-string, enabling the use of the submit button (which was disabled because of the resetButton fuction that will be 
+reseting the numberOfSub variable to its initial value of 1, clearing out the input box, clearing out the displayed messages using 
+an empty string, enabling the use of the submit button (which was disabled because of the resetButton fuction that will be 
 created), and will hide the "Play Again" button.
 Step 16: Create the function expression called resetButton that displays the "Play Again" button, and makes the resetBtn execute the 
 resetGame funciton whenever clicked. It will also select the submit button by its Id name, add to it the disabled property,
@@ -81,7 +81,7 @@ function checkInput(event) {
 let resetGame = function () {
 	randomNum = Math.floor((Math.random() * 100) + 1);
 	numberOfSub = 1;
-	inputValue = parseInt(document.getElementById("num").value = "");
+	document.getElementById("num").value = "";
 	document.getElementById("buttonSub").disabled = false;
 	resetBtn.style.display= "none";
 	messageDisp.innerHTML = "";
