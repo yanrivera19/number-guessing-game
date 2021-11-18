@@ -1,5 +1,5 @@
 /*
-Number-guseeing-Game
+Number-guessing-Game
 
 Step 1: Define a variable called randomNum with a random number producer, using
 the Math.random method to generate the random number from 1-100, and apply
@@ -54,28 +54,27 @@ displayed once, and not everytime you either press the enter-key or click the su
 
 let randomNum = Math.floor((Math.random() * 100) + 1);
 let numberOfSub = 1;
-let maxNumSubmits = 3;
 const messageDisp = document.getElementById("demo");
 const resetBtn = document.getElementById("resetBtn");
 resetBtn.style.display = "none";
 
-function checkInput(event) {		
-	let inputValue = parseInt(document.getElementById("num").value);
+function checkInput(event) {	
+	event.preventDefault();		
+	const inputValue = parseInt(document.getElementById("num").value);
 
-	if(inputValue === randomNum && numberOfSub <= maxNumSubmits) {
-		messageDisp.innerHTML = "Congratulations, you got it right!"
+	if(inputValue === randomNum && numberOfSub <= 3) {
+		messageDisp.innerHTML = "Congratulations, you got it right!";
 		resetButton();
-	} else if(inputValue < randomNum && numberOfSub < maxNumSubmits) {
-		messageDisp.innerHTML = "Too Low"
-	} else if(inputValue > randomNum && numberOfSub < maxNumSubmits) {
-		messageDisp.innerHTML = "Too high"		
+	} else if(inputValue < randomNum && numberOfSub < 3) {
+		messageDisp.innerHTML = "Too Low";
+	} else if(inputValue > randomNum && numberOfSub < 3) {
+		messageDisp.innerHTML = "Too high";		
 	} else {
-		messageDisp.innerHTML = `Sorry, the correct number was ${randomNum}. Try again.`
+		messageDisp.innerHTML = `Sorry, the correct number was ${randomNum}. Try again.`;
 		resetButton();	
 	}
 
-	numberOfSub++
-	event.preventDefault();		
+	numberOfSub++;	
 };
 
 let resetGame = function () {
@@ -89,7 +88,6 @@ let resetGame = function () {
 
 function resetButton() {
 	resetBtn.style.display = "inline-block";	
-  	resetBtn.addEventListener("click", resetGame);
   	document.getElementById("buttonSub").disabled = true;
 };
 
